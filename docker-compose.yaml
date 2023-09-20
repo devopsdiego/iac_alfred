@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+  app_server:
+    build: .
+    container_name: app_server
+    command: ["tail", "-f", "/dev/null"]
+    hostname: app_server
+    volumes: 
+      - .:/root/ansible
+
+  db_server:
+    build: .
+    container_name: db_server
+    command: ["tail", "-f", "/dev/null"]
+    hostname: db_server
+
+  airflow_server:
+    build: .
+    container_name: airflow_server
+    command: ["tail", "-f", "/dev/null"]
+    hostname: airflow_server
